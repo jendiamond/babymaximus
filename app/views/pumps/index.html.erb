@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pumps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Pump time</th>
+      <th>Pump amount</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pumps.each do |pump| %>
+      <tr>
+        <td><%= pump.day %></td>
+        <td><%= pump.pump_time %></td>
+        <td><%= pump.pump_amount %></td>
+        <td><%= pump.notes %></td>
+        <td><%= link_to 'Show', pump %></td>
+        <td><%= link_to 'Edit', edit_pump_path(pump) %></td>
+        <td><%= link_to 'Destroy', pump, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pump', new_pump_path %>

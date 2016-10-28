@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: one
+  pump_time: 2016-10-28 00:39:15
+  pump_amount: 1
+  notes: MyText
+
+two:
+  day: two
+  pump_time: 2016-10-28 00:39:15
+  pump_amount: 1
+  notes: MyText

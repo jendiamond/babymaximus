@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @pump.day %>
+</p>
+
+<p>
+  <strong>Pump time:</strong>
+  <%= @pump.pump_time %>
+</p>
+
+<p>
+  <strong>Pump amount:</strong>
+  <%= @pump.pump_amount %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @pump.notes %>
+</p>
+
+<%= link_to 'Edit', edit_pump_path(@pump) %> |
+<%= link_to 'Back', pumps_path %>

@@ -1,0 +1,37 @@
+<%= form_for(pump) do |f| %>
+  <% if pump.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pump.errors.count, "error") %> prohibited this pump from being saved:</h2>
+
+      <ul>
+      <% pump.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :day_id %>
+    <%= f.text_field :day_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pump_time %>
+    <%= f.datetime_select :pump_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pump_amount %>
+    <%= f.number_field :pump_amount %>
+  </div>
+
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
