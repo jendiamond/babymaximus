@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: one
+  sleep_start: 2016-10-28 00:48:16
+  sleep_end: 2016-10-28 00:48:16
+  notes: MyText
+
+two:
+  day: two
+  sleep_start: 2016-10-28 00:48:16
+  sleep_end: 2016-10-28 00:48:16
+  notes: MyText
