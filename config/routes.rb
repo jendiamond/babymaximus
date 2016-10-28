@@ -5,9 +5,11 @@ Rails.application.routes.draw do
     resources :pumps, :except => [:update, :destroy]
     resources :diapers, :except => [:update, :destroy]
     resources :sleeps, :except => [:update, :destroy]
+    resources :tummy_times, :except => [:update, :destroy]
   end
   resources :feedings, :only => [:update, :destroy]
   resources :pumps, :only => [:update, :destroy]
   resources :diapers, :only => [:update, :destroy]
   resources :sleeps, :only => [:update, :destroy]
+  resources :tummy_times, :only => [:update, :destroy]
 end

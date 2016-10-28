@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tummy Times</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Tummy time</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tummy_times.each do |tummy_time| %>
+      <tr>
+        <td><%= tummy_time.day %></td>
+        <td><%= tummy_time.tummy_time %></td>
+        <td><%= tummy_time.notes %></td>
+        <td><%= link_to 'Show', tummy_time %></td>
+        <td><%= link_to 'Edit', edit_tummy_time_path(tummy_time) %></td>
+        <td><%= link_to 'Destroy', tummy_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tummy Time', new_tummy_time_path %>

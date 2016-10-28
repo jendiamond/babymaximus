@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @tummy_time.day %>
+</p>
+
+<p>
+  <strong>Tummy time:</strong>
+  <%= @tummy_time.tummy_time %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @tummy_time.notes %>
+</p>
+
+<%= link_to 'Edit', edit_tummy_time_path(@tummy_time) %> |
+<%= link_to 'Back', tummy_times_path %>

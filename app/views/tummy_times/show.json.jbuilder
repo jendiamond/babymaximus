@@ -1,0 +1,1 @@
+json.partial! "tummy_times/tummy_time", tummy_time: @tummy_time

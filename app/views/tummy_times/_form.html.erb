@@ -1,0 +1,32 @@
+<%= form_for(tummy_time) do |f| %>
+  <% if tummy_time.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tummy_time.errors.count, "error") %> prohibited this tummy_time from being saved:</h2>
+
+      <ul>
+      <% tummy_time.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :day_id %>
+    <%= f.text_field :day_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tummy_time %>
+    <%= f.number_field :tummy_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
