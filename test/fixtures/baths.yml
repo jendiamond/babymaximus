@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: one
+  bath: false
+  notes: MyText
+
+two:
+  day: two
+  bath: false
+  notes: MyText

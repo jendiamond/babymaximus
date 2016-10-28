@@ -4,4 +4,5 @@ class Day < ApplicationRecord
   has_many :diapers
   has_many :sleeps
   has_many :tummy_times
+  has_many :baths
 end

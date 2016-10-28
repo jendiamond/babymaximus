@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @bath.day %>
+</p>
+
+<p>
+  <strong>Bath:</strong>
+  <%= @bath.bath %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @bath.notes %>
+</p>
+
+<%= link_to 'Edit', edit_bath_path(@bath) %> |
+<%= link_to 'Back', baths_path %>
