@@ -1,0 +1,1 @@
+json.array! @diapers, partial: 'diapers/diaper', as: :diaper

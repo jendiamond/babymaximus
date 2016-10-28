@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: one
+  diaper_type: MyString
+  notes: MyText
+
+two:
+  day: two
+  diaper_type: MyString
+  notes: MyText
