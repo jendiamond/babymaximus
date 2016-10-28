@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @feeding.day %>
+</p>
+
+<p>
+  <strong>Feeding time:</strong>
+  <%= @feeding.feeding_time %>
+</p>
+
+<p>
+  <strong>Left:</strong>
+  <%= @feeding.left %>
+</p>
+
+<p>
+  <strong>Right:</strong>
+  <%= @feeding.right %>
+</p>
+
+<p>
+  <strong>Minutes:</strong>
+  <%= @feeding.minutes %>
+</p>
+
+<p>
+  <strong>Feeding type:</strong>
+  <%= @feeding.feeding_type %>
+</p>
+
+<p>
+  <strong>Feeding amount:</strong>
+  <%= @feeding.feeding_amount %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @feeding.notes %>
+</p>
+
+<%= link_to 'Edit', edit_feeding_path(@feeding) %> |
+<%= link_to 'Back', feedings_path %>
