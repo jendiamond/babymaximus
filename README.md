@@ -40,3 +40,5 @@ rails g scaffold TummyTime day:references tummy_time:integer notes:text
 
 rails g scaffold Bath day:references bath:boolean notes:text
 ```
+
+https://www.youtube.com/watch?v=T0lcUENA8zs

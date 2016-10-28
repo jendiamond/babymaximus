@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :feedings
-  resources :days
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'days#new'
+  resources :days do
+    resources :feedings, :except => [:update, :destroy]
+  end
+  resources :feedings, :only => [:update, :destroy]
 end
