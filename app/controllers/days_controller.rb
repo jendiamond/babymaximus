@@ -21,28 +21,42 @@ class DaysController < ApplicationController
   def edit
   end
 
-  # POST /days
-  # POST /days.json
+  # # POST /days
+  # def create
+  #   @day = Day.new
+
+  #     if @day.save
+  #       redirect_to edit_day_path
+  #     else
+  #       render :new
+  #     end
+  #   end
+  # end
+
+
   def create
-    @day = Day.new(day_params)
+    @day = day.new(params[:day])
+      #redirect_to :action => "edit"
 
     respond_to do |format|
       if @day.save
-        format.html { redirect_to edit_day_path(@day), 
-          notice: 'Jen Diamond wants you to have a great day. XO :)' }
+        format.html { redirect_to edit_day_path(:id), notice: 'Have a great day. Love, Jen. :) XO' }
+        format.json { render json: @day, status: :created, day: @day }
       else
-        format.html { render :new }
+        format.html { render action: "new" }
+        format.json { render json: @day.errors, status: :unprocessable_entity }
       end
     end
-end
+  end
+
+
 
   # PATCH/PUT /days/1
-  # PATCH/PUT /days/1.json
   def update
     respond_to do |format|
       if @day.update(day_params)
         format.html { redirect_to @day, notice: 'Day was successfully updated.' }
-        format.json { render :show, status: :ok, location: @day }
+        format.json { render :show, status: :ok, day: @day }
       else
         format.html { render :edit }
         format.json { render json: @day.errors, status: :unprocessable_entity }

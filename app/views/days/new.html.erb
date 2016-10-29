@@ -3,7 +3,7 @@
 <%= form_for(@day) do |f| %>
   <% if @day.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@day.errors.count, "error") %> prohibited this day from being saved:</h2>
+      <h2><%= pluralize(day.errors.count, "error") %> prohibited this day from being saved:</h2>
 
       <ul>
       <% @day.errors.full_messages.each do |message| %>
@@ -13,13 +13,23 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :week %>
+    <%= f.number_field :week %>
+  </div>
 
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.datetime_select :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
 
-
-
-<%= link_to 'Back', days_path %>
