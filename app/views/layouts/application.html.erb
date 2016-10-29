@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Babymaximus</title>
+    <title>babymaximus</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sansita+One" rel="stylesheet">
   </head>
 
   <body>
-    <h1>Babymaximus</h1>
-    <%= yield %>
+    <div class="container">
+      <div class="jumbotron">
+       <h1>babymaximus</h1>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
