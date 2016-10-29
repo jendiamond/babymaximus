@@ -1,11 +1,8 @@
-# README
+# baymaximus
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Rails version 5.0.0
 
-Things you may want to cover:
-
-* Ruby version
+* Ruby version 3.2
 
 * System dependencies
 
@@ -23,7 +20,7 @@ Things you may want to cover:
 
 ---
 
-```
+```ruby
 rails g scaffold User
 
 rails g scaffold Day week:integer date:datetime notes:text
@@ -42,3 +39,81 @@ rails g scaffold Bath day:references bath:boolean notes:text
 ```
 
 https://www.youtube.com/watch?v=T0lcUENA8zs
+
+---
+
+### Nested forms
+
++ https://github.com/plataformatec/simple_form
++ https://github.com/plataformatec/simple_form#buttons
+
++ https://github.com/plataformatec/simple_form/wiki/Nested-Models
++ http://stackoverflow.com/questions/19347450/creating-multiple-nested-forms-using-simple-form-and-rails-4
++ http://stackoverflow.com/questions/10606619/nested-rails-forms-with-simple-form
++ https://github.com/nathanvda/cocoon/wiki/A-guide-to-doing-nested-model-forms
+
+```ruby
+<%= f.simple_fields_for :friend_birthdays do |friend_birthday| %>
+  <%= friend_birthday.input :name %>
+  <%= friend_birthday.input :gender, :collection => ['male','female'] %>
+<% end %>
+```
+
+```ruby
+class Machine < ActiveRecord::Base
+      has_many :parts , inverse_of: :machine
+      accepts_nested_attributes_for :parts
+    end
+```
+
+```ruby
+<%= simple_form_for @machine do |m| %>
+  <%= m.simple_fields_for :parts do |p| %>
+    <%= p.input :name %>
+  <% end %>
+<% end %>
+```
+
+```ruby
+  def new
+    @machine = Machine.new
+    @machine.parts.build
+  end
+  ```
+
+---
+
+### Create methods for:
+
+```ruby
+def time_between_feedings
+end
+```
+```ruby
+def total_feeding_time_per_day
+end
+```
+```ruby
+def total_feeding_time_per_week
+end
+```
+```ruby
+def total_feeding_time_per_month
+end
+```
+```ruby
+def total_feeding_time_per_day
+end
+```
+```ruby
+def total_feeding_time_per_week
+end
+```
+```ruby
+def total_feeding_time_per_month
+end
+```
+```ruby
+def total_diapers_per_day
+end
+```

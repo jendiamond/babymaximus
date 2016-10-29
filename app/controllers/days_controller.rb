@@ -28,14 +28,13 @@ class DaysController < ApplicationController
 
     respond_to do |format|
       if @day.save
-        format.html { redirect_to @day, notice: 'Day was successfully created.' }
-        format.json { render :show, status: :created, location: @day }
+        format.html { redirect_to edit_day_path(@day), 
+          notice: 'Jen Diamond wants you to have a great day. XO :)' }
       else
         format.html { render :new }
-        format.json { render json: @day.errors, status: :unprocessable_entity }
       end
     end
-  end
+end
 
   # PATCH/PUT /days/1
   # PATCH/PUT /days/1.json
@@ -62,12 +61,11 @@ class DaysController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_day
       @day = Day.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def day_params
       params.require(:day).permit(:week, :date, :notes)
     end
