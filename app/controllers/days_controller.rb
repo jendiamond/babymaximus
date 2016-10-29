@@ -2,13 +2,11 @@ class DaysController < ApplicationController
   before_action :set_day, only: [:show, :edit, :update, :destroy]
 
   # GET /days
-  # GET /days.json
   def index
     @days = Day.all
   end
 
   # GET /days/1
-  # GET /days/1.json
   def show
   end
 
@@ -21,22 +19,9 @@ class DaysController < ApplicationController
   def edit
   end
 
-  # # POST /days
-  # def create
-  #   @day = Day.new
-
-  #     if @day.save
-  #       redirect_to edit_day_path
-  #     else
-  #       render :new
-  #     end
-  #   end
-  # end
-
-
   def create
     @day = day.new(params[:day])
-      #redirect_to :action => "edit"
+      #redirect_to :action => "days#edit"
 
     respond_to do |format|
       if @day.save
@@ -48,8 +33,6 @@ class DaysController < ApplicationController
       end
     end
   end
-
-
 
   # PATCH/PUT /days/1
   def update
@@ -65,7 +48,6 @@ class DaysController < ApplicationController
   end
 
   # DELETE /days/1
-  # DELETE /days/1.json
   def destroy
     @day.destroy
     respond_to do |format|
