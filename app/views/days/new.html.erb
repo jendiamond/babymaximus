@@ -1,6 +1,6 @@
 <h1>It's a New Day</h1>
 
-<%= form_for(@day) do |f| %>
+<%= simple_form_for @day do |f| %>
   <% if @day.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@day.errors.count, "error") %> prohibited this day from being saved:</h2>
@@ -13,21 +13,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :week %>
-    <%= f.number_field :week %>
+    <%= f.input :week, as: :integer %>
   </div>
 
   <div class="field">
-    <%= f.label :date %>
-    <%= f.datetime_select :date %>
+    <%= f.input :date, as: :datetime %>
   </div>
 
   <div class="field">
-    <%= f.label :notes %>
-    <%= f.text_area :notes %>
+    <%= f.input :notes, as: :text %>
   </div>
 
   <div class="actions">
-    <h2><%= f.submit %></h2>
+    <h2><%= f.button :submit, "New Day :)" %></h2>
   </div>
 <% end %>
