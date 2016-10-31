@@ -44,7 +44,7 @@ class DaysController < ApplicationController
         format.json { render json: @day.errors, status: :unprocessable_entity }
       end
     end
-  end
+  end 
 
   # PATCH/PUT /days/1
   def update
