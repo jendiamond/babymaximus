@@ -1,32 +1,28 @@
-<%= form_for(day) do |f| %>
+<%= simple_form_for @day do |f| %>
   <% if day.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(day.errors.count, "error") %> prohibited this day from being saved:</h2>
-
       <ul>
-      <% day.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% day.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :week %>
-    <%= f.number_field :week %>
+    <%= f.input :week, label: "Change the week", as: :integer %>
   </div>
 
   <div class="field">
-    <%= f.label :date %>
-    <%= f.datetime_select :date %>
+    <%= f.input :date, label: "Change the date", as: :datetime %>
   </div>
 
   <div class="field">
-    <%= f.label :notes %>
-    <%= f.text_area :notes %>
+    <%= f.input :notes, label: "Notes about today", as: :text %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit, "Update" %>
   </div>
 <% end %>
