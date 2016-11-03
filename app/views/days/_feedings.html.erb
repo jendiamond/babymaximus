@@ -1,5 +1,4 @@
 <%= simple_form_for :feeding, method: :post, url: day_feeding_path(@day) do |f| %>
-<p>days/_form</p>
   <%= f.input :feeding_time, label: "Feeding Time", as: :datetime %>
   <%= f.input :left, label: "Left", as: :boolean %>
   <%= f.input :right, label: "Right", as: :boolean %>

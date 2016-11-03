@@ -2,13 +2,11 @@ class BathsController < ApplicationController
   before_action :set_bath, only: [:show, :edit, :update, :destroy]
 
   # GET /baths
-  # GET /baths.json
   def index
     @baths = Bath.all
   end
 
   # GET /baths/1
-  # GET /baths/1.json
   def show
   end
 
@@ -22,7 +20,6 @@ class BathsController < ApplicationController
   end
 
   # POST /baths
-  # POST /baths.json
   def create
     @bath = Bath.new(bath_params)
 
@@ -38,7 +35,6 @@ class BathsController < ApplicationController
   end
 
   # PATCH/PUT /baths/1
-  # PATCH/PUT /baths/1.json
   def update
     respond_to do |format|
       if @bath.update(bath_params)
@@ -52,7 +48,6 @@ class BathsController < ApplicationController
   end
 
   # DELETE /baths/1
-  # DELETE /baths/1.json
   def destroy
     @bath.destroy
     respond_to do |format|
@@ -62,12 +57,10 @@ class BathsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_bath
       @bath = Bath.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def bath_params
       params.require(:bath).permit(:day_id, :bath, :notes)
     end

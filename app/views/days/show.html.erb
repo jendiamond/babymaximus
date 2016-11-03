@@ -15,5 +15,15 @@
   <%= @day.notes %>
 </p>
 
+<hr/>
+<!-- Feeding -->
+
+<p><%= link_to "Add A Feeding", new_day_feeding_path(day_id: @day.id) %></p>
+
+
+
+<!-- End Feeding -->
+
+<hr/>
 <%= link_to 'Edit', edit_day_path(@day) %> |
 <%= link_to 'Back', days_path %>

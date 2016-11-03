@@ -1,4 +1,4 @@
-<%= simple_form_for @day do |f| %>
+<%= simple_form_for @day do |d| %>
   <% if day.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(day.errors.count, "error") %> prohibited this day from being saved:</h2>
@@ -11,18 +11,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.input :week, label: "Change the week", as: :integer %>
+    <%= d.input :week, label: "Change the week", as: :integer %>
   </div>
 
   <div class="field">
-    <%= f.input :date, label: "Change the date", as: :datetime %>
+    <%= d.input :date, label: "Change the date", as: :datetime %>
   </div>
 
   <div class="field">
-    <%= f.input :notes, label: "Notes about today", as: :text %>
+    <%= d.input :notes, label: "Notes about today", as: :text %>
   </div>
+
+
+<!-- Baths -->
+
+  <%= d.simple_fields_for :baths do |b| %>
+    <%= b.input :bath, label: "Did Max have a bath today?", as: :boolean %>
+    <%= b.input :notes, label: "Notes about bathtime", as: :text %>
+  <% end %>
+
+<!-- End Baths -->
 
   <div class="actions">
-    <%= f.button :submit, "Update" %>
+    <%= d.button :submit, "Update" %>
   </div>
 <% end %>
