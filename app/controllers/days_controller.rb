@@ -8,40 +8,29 @@ class DaysController < ApplicationController
 
   # GET /days/1
   def show
+    @bath = Bath.find_by day_id:(@day.id)
+    @feeding = Feeding.find_by day_id:(@day.id)
   end
 
   # GET /days/new
   def new
     @day = Day.new
+    @bath = @day.build_bath
   end
 
   # GET /days/1/edit
   def edit
   end
 
-  # def create
-  #   @day = Day.new(day_params)
-  #     #redirect_to :action => "edit"
-
-  #   respond_to do |format|
-  #     if @day.save(day_params)
-  #       format.html { redirect_to @day, notice: 'Have a great day. Love, Jen. :) XO' }
-  #     else
-  #       format.html { render action: "new" }
-  #     end
-  #   end
-  # end
-
+# POST /days
   def create
     @day = Day.new(day_params)
 
     respond_to do |format|
       if @day.save
-        format.html { redirect_to edit_day_path(@day), notice: 'Day was successfully created.' }
-        format.json { render :show, status: :created, location: @day }
+        format.html { redirect_to @day, notice: 'Day was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @day.errors, status: :unprocessable_entity }
       end
     end
   end 
@@ -51,10 +40,8 @@ class DaysController < ApplicationController
     respond_to do |format|
       if @day.update(day_params)
         format.html { redirect_to @day, notice: 'Day was successfully updated.' }
-        format.json { render :show, status: :ok, day: @day }
       else
         format.html { render :edit }
-        format.json { render json: @day.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -64,7 +51,6 @@ class DaysController < ApplicationController
     @day.destroy
     respond_to do |format|
       format.html { redirect_to days_url, notice: 'Day was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
@@ -75,6 +61,9 @@ class DaysController < ApplicationController
     end
 
     def day_params
-      params.require(:day).permit(:week, :date, :notes)
+      params.require(:day).permit(:week, :date, :notes,
+      :bath_attributes => [:bath,:notes],
+      :feedings => [:feeding_time,:left,:right,:minutes,
+                    :feeding_type,:feeding_amount,:notes])
     end
 end
