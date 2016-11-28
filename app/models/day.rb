@@ -1,5 +1,5 @@
 class Day < ApplicationRecord
-  has_many :feedings, inverse_of: :day, dependent: :destroy 
+  has_many :feedings, dependent: :destroy 
   has_many :pumps, inverse_of: :day, dependent: :destroy 
   has_many :diapers, inverse_of: :day, dependent: :destroy 
   has_many :sleeps, inverse_of: :day, dependent: :destroy 

@@ -29,7 +29,7 @@
         <td><%= feeding.feeding_amount %></td>
         <td><%= feeding.notes %></td>
         <td><%= link_to 'Show', feeding %></td>
-        <td><%= link_to 'Edit', edit_feeding_path(feeding) %></td>
+        <td><%#= link_to 'Edit', edit_feeding_path(feeding) %></td>
         <td><%= link_to 'Destroy', feeding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Feeding', new_feeding_path %>
+<%#= link_to 'New Feeding', new_feeding_path %>

@@ -1,9 +1,13 @@
-<%= simple_form_for :feeding, method: :post, url: day_feeding_path(@day) do |f| %>
-  <%= f.input :feeding_time, label: "Feeding Time", as: :datetime %>
-  <%= f.input :left, label: "Left", as: :boolean %>
-  <%= f.input :right, label: "Right", as: :boolean %>
-  <%= f.input :minutes, label: "Minutes of Feeding", as: :integer %>
-  <%= f.input :feeding_type, collection: [ "B", "BF", "BVF"], as: :radio_buttons %>
-  <%= f.input :feeding_amount, label: "Feeding Amount in ML.", as: :integer %>
-  <%= f.input :notes, label: "Feeding Notes", as: :text %>
-<% end %>
+<hr/>
+<h3>Todays Feedings AH HA HA!</h3>
+  <% @feedings.each do |feeding| %>
+    <p><%= feeding.day_id %></p>
+    <p><%= feeding.feeding_time %></p>
+    <p><%= feeding.left %></p>
+    <p><%= feeding.right %></p>
+    <p><%= feeding.minutes %></p>
+    <p><%= feeding.feeding_type %></p>
+    <p><%= feeding.feeding_amount %></p>
+    <p><%= feeding.notes %></p>
+  <% end %>
+<hr/>

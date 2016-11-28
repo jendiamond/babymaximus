@@ -1,1 +1,0 @@
-json.partial! "diapers/diaper", diaper: @diaper

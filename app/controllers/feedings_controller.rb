@@ -23,7 +23,7 @@ class FeedingsController < ApplicationController
   # POST /feedings
   def create
     @day = Day.find(params[:day_id])
-    @feeding = @day.feedings.create
+    @feeding = @day.feedings.build(params[:feeding])
     respond_to do |format|
       if @feeding.save
         format.html { redirect_to @day, notice: 'feeding was successfully created.' }
@@ -58,6 +58,7 @@ class FeedingsController < ApplicationController
     end
 
     def feeding_params
-      params.require(:feeding).permit(:day_id, :feeding_time, :left, :right, :minutes, :feeding_type, :feeding_amount, :notes)
+      params.require(:feeding).permit(:day_id, :feeding_time,
+        :left, :right, :minutes, :feeding_type, :feeding_amount, :notes)
     end
 end

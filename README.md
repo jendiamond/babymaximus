@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/rails.svg)](https://badge.fury.io/rb/rails) [![Gem Version](https://badge.fury.io/rb/bootstrap-sass.svg)] [![Gem Version](https://badge.fury.io/rb/pg.svg)](https://badge.fury.io/rb/pg) [![Gem Version](https://badge.fury.io/rb/puma.svg)](https://badge.fury.io/rb/puma)
+
 # baymaximus
 
 * Rails version 5.0.0

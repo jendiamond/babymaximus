@@ -9,7 +9,7 @@ class DaysController < ApplicationController
   # GET /days/1
   def show
     @bath = Bath.find_by day_id:(@day.id)
-    @feeding = Feeding.find_by day_id:(@day.id)
+    @feedings = @day.feedings
   end
 
   # GET /days/new
@@ -63,7 +63,7 @@ class DaysController < ApplicationController
     def day_params
       params.require(:day).permit(:week, :date, :notes,
       :bath_attributes => [:bath,:notes],
-      :feedings => [:feeding_time,:left,:right,:minutes,
+      :feedings_attributes => [:feeding_time,:left,:right,:minutes,
                     :feeding_type,:feeding_amount,:notes])
     end
 end

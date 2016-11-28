@@ -1,1 +1,0 @@
-json.array! @tummy_times, partial: 'tummy_times/tummy_time', as: :tummy_time
