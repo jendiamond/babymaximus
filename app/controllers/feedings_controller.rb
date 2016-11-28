@@ -33,6 +33,18 @@ class FeedingsController < ApplicationController
     end
   end
 
+  def create
+   @day = Day.find(params[:day_id])
+   @feeding = Feeding.new(feeding_params)
+   respond_to do |format|
+     if @feeding.save
+       format.html { redirect_to @day, notice: 'feeding was successfully created.' }
+     else
+       format.html { render :new }
+     end
+   end
+ end
+
   # PATCH/PUT /feedings/1
   def update
     respond_to do |format|

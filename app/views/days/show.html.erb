@@ -19,18 +19,18 @@
 <hr/>
 <h3><%= link_to "Add A Feeding", new_day_feeding_path(day_id: @day.id) %></h3>
 
-<p>Feeding count for today: <%= @day.feedings.count %></p>
-
+<p><%= @day.feedings.count %> feedings today</p>
+<hr/>
   <% @day.feedings.each do |feeding| %>
-    <p><%= feeding.inspect %></p>
-    <p><%= feeding.day_id %></p>
-    <p><%= feeding.feeding_time %></p>
-    <p><%= feeding.left %></p>
-    <p><%= feeding.right %></p>
-    <p><%= feeding.minutes %></p>
-    <p><%= feeding.feeding_type %></p>
-    <p><%= feeding.feeding_amount %></p>
-    <p><%= feeding.notes %></p>
+    <p>Day: <%= feeding.day_id %></p>
+    <p>Feeding time: <%= feeding.feeding_time %></p>
+    <p>Left: <%= feeding.left %></p>
+    <p>Right: <%= feeding.right %></p>
+    <p>minutes: <%= feeding.minutes %></p>
+    <p>type: <%= feeding.feeding_type %></p>
+    <p>amount: <%= feeding.feeding_amount %></p>
+    <p>notes: <%= feeding.notes %></p>
+    <hr/>
   <% end %>
   <hr/>
 <!-- End Feeding -->
